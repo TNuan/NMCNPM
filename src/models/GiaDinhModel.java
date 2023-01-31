@@ -80,5 +80,4 @@ public class GiaDinhModel {
         this.diaChiHienTai = diaChiHienTai;
     }
     
-    
 }
