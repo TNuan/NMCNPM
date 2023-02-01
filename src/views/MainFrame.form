@@ -80,6 +80,10 @@
                           <Component id="NhanKhauBtn" alignment="1" max="32767" attributes="0"/>
                           <Component id="HoKhauBtn" alignment="0" max="32767" attributes="0"/>
                           <Component id="ThongKeBtn" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="ThongKeBtn1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -94,7 +98,9 @@
                       <Component id="HoKhauBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="ThongKeBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="219" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="ThongKeBtn1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -120,7 +126,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="22" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="jblTrangChu" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
@@ -137,7 +143,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Icons/app.png"/>
+                      <Image iconType="3" name="/Icons/icons8-smiling-browser-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Trang ch&#x1ee7;"/>
                   </Properties>
@@ -160,7 +166,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jlbNhanKhau" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="28" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -184,7 +190,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Icons/multiple-users-silhouette.png"/>
+                      <Image iconType="3" name="/Icons/icons8-user-groups-32.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Nh&#xe2;n Kh&#x1ea9;u"/>
                   </Properties>
@@ -228,7 +234,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Icons/home.png"/>
+                      <Image iconType="3" name="/Icons/icons8-country-house-32.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="H&#x1ed9; Kh&#x1ea9;u"/>
                   </Properties>
@@ -272,10 +278,59 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Icons/increasing-stocks-graphic.png"/>
+                      <Image iconType="3" name="/Icons/icons8-analytics-32.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Th&#x1ed1;ng K&#xea;"/>
                   </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="QuanLyHopBtn">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="66" red="66" type="rgb"/>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jlbQuanLyHop" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="45" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jlbQuanLyHop" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jlbQuanLyHop">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Arial" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Icons/icons8-group-task-32 (1).png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n L&#xfd; H&#x1ecd;p"/>
+                  </Properties>
+                  <AccessibilityProperties>
+                    <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                      <ComponentRef name="jlbQuanLyHop"/>
+                    </Property>
+                  </AccessibilityProperties>
                 </Component>
               </SubComponents>
             </Container>
@@ -286,12 +341,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="820" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="791" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="481" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
