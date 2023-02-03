@@ -4,10 +4,10 @@ public class ThamGiaCuocHopModel {
     private int idCuocHop;
     private int idNhanKhau;
 
-    public ThamGiaCuocHopModel(int idCuocHop, int idNhanKhau) {
-        this.idCuocHop = idCuocHop;
-        this.idNhanKhau = idNhanKhau;
-    }
+    // public ThamGiaCuocHopModel(int idCuocHop, int idNhanKhau) {
+    //     this.idCuocHop = idCuocHop;
+    //     this.idNhanKhau = idNhanKhau;
+    // }
 
     public int getIdCuocHop() {
         return idCuocHop;
