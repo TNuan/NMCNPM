@@ -16,15 +16,15 @@ public class CuocHopModel {
     private String noiDung;
     private UserMoldel nguoiTaoCuocHop;
 
-    public CuocHopModel(int ID, String maCuocHop, Date thoiGianHop, Date thoiGianTaoCuocHop, String diaDiem, String noiDung, UserMoldel nguoiTaoCuocHop) {
-        this.ID = ID;
-        this.maCuocHop = maCuocHop;
-        this.thoiGianHop = thoiGianHop;
-        this.thoiGianTaoCuocHop = thoiGianTaoCuocHop;
-        this.diaDiem = diaDiem;
-        this.noiDung = noiDung;
-        this.nguoiTaoCuocHop = nguoiTaoCuocHop;
-    }
+    // public CuocHopModel(int ID, String maCuocHop, Date thoiGianHop, Date thoiGianTaoCuocHop, String diaDiem, String noiDung, UserMoldel nguoiTaoCuocHop) {
+    //     this.ID = ID;
+    //     this.maCuocHop = maCuocHop;
+    //     this.thoiGianHop = thoiGianHop;
+    //     this.thoiGianTaoCuocHop = thoiGianTaoCuocHop;
+    //     this.diaDiem = diaDiem;
+    //     this.noiDung = noiDung;
+    //     this.nguoiTaoCuocHop = nguoiTaoCuocHop;
+    // }
 
     public int getID() {
         return ID;
