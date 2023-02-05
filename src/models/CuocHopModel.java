@@ -10,17 +10,17 @@ import java.util.Date;
 public class CuocHopModel {
     private int ID;
     private String maCuocHop;
-    private Date thoiGianHop;
-    private Date thoiGianTaoCuocHop;
+    private Date ngayHop;
+    private Date ngayTaoCuocHop;
     private String diaDiem;
     private String noiDung;
     private UserMoldel nguoiTaoCuocHop;
 
-    // public CuocHopModel(int ID, String maCuocHop, Date thoiGianHop, Date thoiGianTaoCuocHop, String diaDiem, String noiDung, UserMoldel nguoiTaoCuocHop) {
+    // public CuocHopModel(int ID, String maCuocHop, Date ngayHop, Date ngayTaoCuocHop, String diaDiem, String noiDung, UserMoldel nguoiTaoCuocHop) {
     //     this.ID = ID;
     //     this.maCuocHop = maCuocHop;
-    //     this.thoiGianHop = thoiGianHop;
-    //     this.thoiGianTaoCuocHop = thoiGianTaoCuocHop;
+    //     this.ngayHop = ngayHop;
+    //     this.ngayTaoCuocHop = ngayTaoCuocHop;
     //     this.diaDiem = diaDiem;
     //     this.noiDung = noiDung;
     //     this.nguoiTaoCuocHop = nguoiTaoCuocHop;
@@ -42,20 +42,20 @@ public class CuocHopModel {
         this.maCuocHop = maCuocHop;
     }
 
-    public Date getThoiGianHop() {
-        return thoiGianHop;
+    public Date getngayHop() {
+        return ngayHop;
     }
 
-    public void setThoiGianHop(Date thoiGianHop) {
-        this.thoiGianHop = thoiGianHop;
+    public void setngayHop(Date ngayHop) {
+        this.ngayHop = ngayHop;
     }
 
-    public Date getThoiGianTaoCuocHop() {
-        return thoiGianTaoCuocHop;
+    public Date getngayTaoCuocHop() {
+        return ngayTaoCuocHop;
     }
 
-    public void setThoiGianTaoCuocHop(Date thoiGianTaoCuocHop) {
-        this.thoiGianTaoCuocHop = thoiGianTaoCuocHop;
+    public void setngayTaoCuocHop(Date ngayTaoCuocHop) {
+        this.ngayTaoCuocHop = ngayTaoCuocHop;
     }
 
     public String getDiaDiem() {
