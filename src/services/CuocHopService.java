@@ -34,7 +34,7 @@ public class CuocHopService {
                 + " values (?, ?, NOW(), ?, ?, ?)";
         PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
         preparedStatement.setString(1, cuocHopBean.getCuocHopModel().getMaCuocHop());
-        preparedStatement.setDate(2, (Date) cuocHopBean.getCuocHopModel().getngayHop());
+        preparedStatement.setDate(2, (Date) cuocHopBean.getCuocHopModel().getNgayHop());
         preparedStatement.setString(4, cuocHopBean.getCuocHopModel().getDiaDiem());
         preparedStatement.setString(5, cuocHopBean.getCuocHopModel().getNoiDung());
         preparedStatement.setInt(6, cuocHopBean.getChuCuocHop().getID());
@@ -92,30 +92,23 @@ public class CuocHopService {
             while (rs.next()){
                 CuocHopBean temp = new CuocHopBean();
                 CuocHopModel cuocHopModel = temp.getCuocHopModel();
-                UserMoldel nguoiTaoCuocHop = new UserMoldel();
                 cuocHopModel.setID(rs.getInt("ID"));
-                cuocHopModel.setNguoiTaoCuocHop(nguoiTaoCuocHop(rs.getInt("idNguoiTaoCuocHop")));
-                cuocHopModel.setMaHoKhau(rs.getString("maHoKhau"));
-                cuocHopModel.setMaKhuVuc(rs.getString("maKhuVuc"));
-                cuocHopModel.setNgayLap(rs.getDate("ngayLap"));
-                cuocHopModel.setDiaChi(rs.getString("diaChi"));
-                NhanKhauModel chuHo = temp.getChuHo();
-                chuHo.setID(rs.getInt("ID"));
-                chuHo.setHoTen(rs.getString("hoTen"));
-                chuHo.setGioiTinh(rs.getString("gioiTinh"));
-                chuHo.setNamSinh(rs.getDate("namSinh"));
-                chuHo.setDiaChiHienNay(rs.getString("diaChiHienNay"));
+                cuocHopModel.setIdNguoiTaoCuocHop(rs.getInt("idNguoiTaoCuocHop"));
+                cuocHopModel.setMaCuocHop(rs.getString("maCuocHop"));
+                cuocHopModel.setNgayHop(rs.getDate("ngayHop"));
+                cuocHopModel.setDiaDiem(rs.getString("diaDiem"));
+                cuocHopModel.setNoiDung(rs.getString("noiDung"));
                 try {
-                    String sql = "SELECT * FROM nhan_khau INNER JOIN thanh_vien_cua_ho ON nhan_khau.ID = thanh_vien_cua_ho.idNhanKhau "
-                            + "WHERE thanh_vien_cua_ho.idHoKhau = "
-                            + hoKhauModel.getID();
+                    String sql = "SELECT * FROM nhan_khau INNER JOIN tham_gia_cuoc_hop ON nhan_khau.ID = tham_gia_cuoc_hop.idNhanKhau "
+                            + "WHERE tham_gia_cuoc_hop.idCuocHop = "
+                            + cuocHopModel.getID();
                     PreparedStatement prst = connection.prepareStatement(sql);
                     ResultSet rs_1 = prst.executeQuery();
                     List<NhanKhauModel> listNhanKhau = temp.getListNhanKhauModels();
-                    List<ThanhVienCuaHoModel> listThanhVienCuaHo = temp.getListThanhVienCuaHo();
+                    List<ThamGiaCuocHopModel> listThamGiaCuocHop = temp.getListThamGiaCuocHop();
                     while (rs_1.next()) {
                         NhanKhauModel nhanKhauModel = new NhanKhauModel();
-                        ThanhVienCuaHoModel thanhVienCuaHoModel = new ThanhVienCuaHoModel();
+                        ThamGiaCuocHopModel thamGiaCuocHopModel = new ThamGiaCuocHopModel();
                         nhanKhauModel.setID(rs_1.getInt("idNhanKhau"));
                         nhanKhauModel.setBietDanh(rs_1.getString("bietDanh"));
                         nhanKhauModel.setHoTen(rs_1.getString("hoTen"));
@@ -129,14 +122,13 @@ public class CuocHopService {
                         nhanKhauModel.setNoiThuongTru(rs_1.getString("noiThuongTru"));
                         nhanKhauModel.setDiaChiHienNay(rs_1.getString("diaChiHienNay"));
                         
-                        thanhVienCuaHoModel.setIdHoKhau(rs_1.getInt("idHoKhau"));
-                        thanhVienCuaHoModel.setIdNhanKhau(rs_1.getInt("idNhanKhau"));
-                        thanhVienCuaHoModel.setQuanHeVoiChuHo(rs_1.getString("quanHeVoiChuHo"));
+                        thamGiaCuocHopModel.setIdCuocHop(rs_1.getInt("idCuocHop"));
+                        thamGiaCuocHopModel.setIdNhanKhau(rs_1.getInt("idNhanKhau"));
                         listNhanKhau.add(nhanKhauModel);
-                        listThanhVienCuaHo.add(thanhVienCuaHoModel);
+                        listThamGiaCuocHop.add(thamGiaCuocHopModel);
                     }
                 } catch (Exception e) {
-                    System.out.println("services.HoKhauService.getListHoKhau()");
+                    System.out.println("services.CuocHopService.getListCuocHop()");
                     System.out.println(e.getMessage());
                 }
                 list.add(temp);
