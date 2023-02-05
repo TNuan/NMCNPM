@@ -4,17 +4,26 @@
  */
 package views;
 
+import javax.swing.JFrame;
+
+import controllers.CuocHopPanelController;
+
 /**
  *
  * @author minib
  */
 public class CuocHopManagePanel extends javax.swing.JPanel {
 
+    private JFrame parentFrame;
+    private CuocHopPanelController controller;
     /**
      * Creates new form CuocHopManagePanel
      */
-    public CuocHopManagePanel() {
+    public CuocHopManagePanel(JFrame parentFrame) {
+        this.parentFrame = parentFrame;
         initComponents();
+        controller = new CuocHopPanelController(jtfSearch, tableJpn);
+        controller.setParent(parentFrame);
     }
 
     /**
@@ -26,19 +35,79 @@ public class CuocHopManagePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        themMoiBtn = new javax.swing.JButton();
+        tableJpn = new javax.swing.JPanel();
+        jtfSearch = new javax.swing.JTextField();
+
+        themMoiBtn.setText("Thêm mới");
+        themMoiBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                themMoiBtnActionPerformed(evt);
+            }
+        });
+
+        tableJpn.setPreferredSize(new java.awt.Dimension(0, 0));
+
+        javax.swing.GroupLayout tableJpnLayout = new javax.swing.GroupLayout(tableJpn);
+        tableJpn.setLayout(tableJpnLayout);
+        tableJpnLayout.setHorizontalGroup(
+            tableJpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        tableJpnLayout.setVerticalGroup(
+            tableJpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 373, Short.MAX_VALUE)
+        );
+
+        jtfSearch.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jtfSearch.setToolTipText("");
+        jtfSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfSearchActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jtfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(399, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tableJpn, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(themMoiBtn)
+                        .addGap(69, 69, 69))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jtfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(themMoiBtn)
+                    .addComponent(tableJpn, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void themMoiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themMoiBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_themMoiBtnActionPerformed
+
+    private void jtfSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfSearchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton themMoiBtn;
+    private javax.swing.JPanel tableJpn;
+    private javax.swing.JTextField jtfSearch;
     // End of variables declaration//GEN-END:variables
 }
