@@ -11,7 +11,7 @@ public class HomePagePanel extends javax.swing.JPanel {
     private HomeCotroller cotroller;
     public HomePagePanel() {
         initComponents();
-        this.cotroller = new HomeCotroller(tongNhanKhauLb, tongHoKhauLb, nhanKhauTamTruLb, nhanKhauTamVangLb);
+        this.cotroller = new HomeCotroller(tongNhanKhauLb, tongHoKhauLb, nhanKhauTamTruLb, nhanKhauTamVangLb, tongCuocHopLb);
         this.cotroller.setData();
     }
 
@@ -299,5 +299,6 @@ public class HomePagePanel extends javax.swing.JPanel {
     private javax.swing.JLabel nhanKhauTamVangLb;
     private javax.swing.JLabel tongHoKhauLb;
     private javax.swing.JLabel tongNhanKhauLb;
+    private javax.swing.JLabel tongCuocHopLb;
     // End of variables declaration//GEN-END:variables
 }

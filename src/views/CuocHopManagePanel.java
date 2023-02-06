@@ -23,7 +23,7 @@ public class CuocHopManagePanel extends javax.swing.JPanel {
         this.parentFrame = parentFrame;
         initComponents();
         controller = new CuocHopPanelController(jtfSearch, tableJpn);
-        controller.setParent(parentFrame);
+        controller.setParentJFrame(parentFrame);
     }
 
     /**

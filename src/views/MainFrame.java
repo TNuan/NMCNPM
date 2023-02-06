@@ -31,7 +31,7 @@ public class MainFrame extends javax.swing.JFrame {
         listDanhMuc.add(new DanhMucBean("NhanKhau", NhanKhauBtn, jlbNhanKhau));
         listDanhMuc.add(new DanhMucBean("HoKhau", HoKhauBtn, jlbHoKhau));
         listDanhMuc.add(new DanhMucBean("ThongKe", ThongKeBtn, jlbThongKe));
-        listDanhMuc.add(new DanhMucBean("QuanLyHop", QuanLyHopBtn, jlbQuanLyHop));
+        listDanhMuc.add(new DanhMucBean("CuocHop", QuanLyHopBtn, jlbQuanLyHop));
         
         MainController controller = new MainController(jpnBean, this);
         controller.setView(Home, jblTrangChu, "TrangChu");
