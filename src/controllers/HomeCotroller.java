@@ -15,12 +15,14 @@ public class HomeCotroller {
     private JLabel tongHoKhauLb;
     private JLabel nhanKhauTamTruLb;
     private JLabel nhanKhauTamVangLb;
+    private JLabel tongCuocHopLb;
 
-    public HomeCotroller(JLabel tongNhanKhauLb, JLabel tongHoKhau, JLabel nhanKhauTamTruLb, JLabel nhanKhauTamVangLb) {
+    public HomeCotroller(JLabel tongNhanKhauLb, JLabel tongHoKhau, JLabel nhanKhauTamTruLb, JLabel nhanKhauTamVangLb, JLabel tongCuocHopLb) {
         this.tongNhanKhauLb = tongNhanKhauLb;
         this.tongHoKhauLb = tongHoKhau;
         this.nhanKhauTamTruLb = nhanKhauTamTruLb;
         this.nhanKhauTamVangLb = nhanKhauTamVangLb;
+        this.tongCuocHopLb = tongCuocHopLb;
     }
     
     public void setData() {
@@ -58,6 +60,14 @@ public class HomeCotroller {
             }
             preparedStatement.close();
             
+            query = "SELECT COUNT(*) AS tong FROM cuoc_hop";
+            preparedStatement = (PreparedStatement)connection.prepareStatement(query);
+            rs = preparedStatement.executeQuery();
+            while (rs.next()){
+                this.tongHoKhauLb.setText(String.valueOf(rs.getInt("tong")));
+            }
+            preparedStatement.close();
+
             connection.close();
         } catch (Exception e) {
         }
@@ -95,5 +105,11 @@ public class HomeCotroller {
         this.nhanKhauTamVangLb = nhanKhauTamVangLb;
     }
     
-    
+    public JLabel getTongCuocHopLb() {
+        return tongCuocHopLb;
+    }
+
+    public void setCuocHopKhau(JLabel tongCuocHopLb) {
+        this.tongCuocHopLb = tongCuocHopLb;
+    }
 }
