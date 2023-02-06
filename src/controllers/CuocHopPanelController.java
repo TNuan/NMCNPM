@@ -117,4 +117,33 @@ public class CuocHopPanelController {
         tableJpn.repaint();
     }
 
+    public void setParentJFrame(JFrame parentJFrame) {
+        this.parentJFrame = parentJFrame;
+    }
+    
+    public List<CuocHopBean> getList() {
+        return list;
+    }
+
+    public void setList(List<CuocHopBean> list) {
+        this.list = list;
+    }
+
+    public JTextField getSearchJtf() {
+        return searchJtf;
+    }
+
+    public void setSearchJtf(JTextField searchJtf) {
+        this.searchJtf = searchJtf;
+    }
+
+    public JPanel getTableJpn() {
+        return tableJpn;
+    }
+
+    public void setTableJpn(JPanel tableJpn) {
+        this.tableJpn = tableJpn;
+    }
+    
+
 }
