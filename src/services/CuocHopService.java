@@ -37,7 +37,7 @@ public class CuocHopService {
         preparedStatement.setDate(2, (Date) cuocHopBean.getCuocHopModel().getNgayHop());
         preparedStatement.setString(4, cuocHopBean.getCuocHopModel().getDiaDiem());
         preparedStatement.setString(5, cuocHopBean.getCuocHopModel().getNoiDung());
-        preparedStatement.setInt(6, cuocHopBean.getChuCuocHop().getID());
+        preparedStatement.setInt(6, cuocHopBean.getnguoiTaoCuocHop().getID());
 
         preparedStatement.executeUpdate();
         ResultSet rs = preparedStatement.getGeneratedKeys();
