@@ -48,7 +48,7 @@ public class CuocHopPanelController {
             public void insertUpdate(DocumentEvent e) {
                 String key = searchJtf.getText().trim();
                 if (key.isEmpty()) {
-                    list = cuocHopService.getListHoKhau();
+                    list = cuocHopService.getListCuocHop();
                 } else {
                     list = cuocHopService.search(key);
                 }
@@ -59,7 +59,7 @@ public class CuocHopPanelController {
             public void removeUpdate(DocumentEvent e) {
                 String key = searchJtf.getText().trim();
                 if (key.isEmpty()) {
-                    list = cuocHopService.getListHoKhau();
+                    list = cuocHopService.getListCuocHop();
                 } else {
                     list = cuocHopService.search(key);
                 }
@@ -70,7 +70,7 @@ public class CuocHopPanelController {
             public void changedUpdate(DocumentEvent e) {
                 String key = searchJtf.getText().trim();
                 if (key.isEmpty()) {
-                    list = cuocHopService.getListHoKhau();
+                    list = cuocHopService.getListCuocHop();
                 } else {
                     list = cuocHopService.search(key);
                 }
@@ -80,7 +80,7 @@ public class CuocHopPanelController {
     }
 
     private void setData() {
-        DefaultTableModel model = tableModelCuocHop.setTableHoKhau(list, COLUNMS);
+        DefaultTableModel model = tableModelCuocHop.setTableCuocHop(list, COLUNMS);
 
         JTable table = new JTable(model) {
             @Override
