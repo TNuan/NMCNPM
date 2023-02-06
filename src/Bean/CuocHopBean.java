@@ -50,8 +50,23 @@ public class CuocHopBean {
         this.chuCuocHop = chuCuocHop;
     }
 
+    public List<NhanKhauModel> getListNhanKhauModels() {
+        return listNhanKhauModels;
+    }
+
+    public void setListNhanKhauModels(List<NhanKhauModel> listNhanKhauModels) {
+        this.listNhanKhauModels = listNhanKhauModels;
+    }
+
     public List<ThamGiaCuocHopModel> getListThamGiaCuocHop () {
         return listThamGiaCuocHop;
     }
+
+    public void setListThamGiaCuocHop(List<ThamGiaCuocHopModel> listThamGiaCuocHop) {
+        this.listThamGiaCuocHop = listThamGiaCuocHop;
+    }
+
+
+    
 
 }
