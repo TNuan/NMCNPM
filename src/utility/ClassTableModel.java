@@ -161,7 +161,7 @@ public class ClassTableModel {
         listItem.forEach((CuocHopBean item) -> {
             obj[0] = item.getCuocHopModel().getID();
             obj[1] = item.getCuocHopModel().getMaCuocHop();
-            obj[2] = item.getnguoiTaoCuocHop().getUserName();
+            obj[2] = item.getNguoiTaoCuocHop().getUserName();
             obj[3] = item.getCuocHopModel().getDiaDiem();
             obj[4] = item.getCuocHopModel().getNgayTaoCuocHop();
             dtm.addRow(obj);
