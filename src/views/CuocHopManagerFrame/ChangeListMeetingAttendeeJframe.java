@@ -4,17 +4,37 @@
  */
 package views.CuocHopManagerFrame;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JFrame;
+
+import Bean.MemOfMeeting;
+import controllers.CuocHopManagerController.ChangeListMeetingAttendeeController;
+
 /**
  *
  * @author minib
  */
 public class ChangeListMeetingAttendeeJframe extends javax.swing.JFrame {
 
-    /**
+    private List<MemOfMeeting> listMember;
+    private List<MemOfMeeting> listMemberTemp;
+    private ChangeListMeetingAttendeeController controller;
+    private JFrame parentJFrame;
+
+     /**
      * Creates new form ChangeListMeetingAttendeeJframe
+     * @param listMember
+     * @param parentJFrame
      */
-    public ChangeListMeetingAttendeeJframe() {
+    public ChangeListMeetingAttendeeJframe(List<MemOfMeeting> listMember, JFrame parentJFrame) {
         initComponents();
+        this.listMember = listMember;
+        this.listMemberTemp = new ArrayList<>();
+        this.listMemberTemp.addAll(listMember);
+        this.parentJFrame = parentJFrame;
+        // this.controller = new ChangeListMeetingAttendeeController(this.listMemberTemp, addBtn, removeBtn);
     }
 
     /**
@@ -69,12 +89,6 @@ public class ChangeListMeetingAttendeeJframe extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ChangeListMeetingAttendeeJframe().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

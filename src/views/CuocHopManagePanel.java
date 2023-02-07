@@ -7,6 +7,7 @@ package views;
 import javax.swing.JFrame;
 
 import controllers.CuocHopPanelController;
+import views.CuocHopManagerFrame.ThemMoiCuocHop;
 
 /**
  *
@@ -97,7 +98,10 @@ public class CuocHopManagePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void themMoiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themMoiBtnActionPerformed
-        // TODO add your handling code here:
+        ThemMoiCuocHop themMoiCuocHop = new ThemMoiCuocHop(this.parentFrame);
+        themMoiCuocHop.setLocationRelativeTo(null);
+        themMoiCuocHop.setResizable(false);
+        themMoiCuocHop.setVisible(true);
     }//GEN-LAST:event_themMoiBtnActionPerformed
 
     private void jtfSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfSearchActionPerformed
