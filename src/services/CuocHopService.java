@@ -96,6 +96,7 @@ public class CuocHopService {
                 cuocHopModel.setIdNguoiTaoCuocHop(rs.getInt("idNguoiTaoCuocHop"));
                 cuocHopModel.setMaCuocHop(rs.getString("maCuocHop"));
                 cuocHopModel.setNgayHop(rs.getDate("ngayHop"));
+                cuocHopModel.setNgayTaoCuocHop(rs.getDate("ngayTaoCuocHop"));
                 cuocHopModel.setDiaDiem(rs.getString("diaDiem"));
                 cuocHopModel.setNoiDung(rs.getString("noiDung"));
                 UserMoldel nguoiTaoCuocHop = temp.getNguoiTaoCuocHop();
