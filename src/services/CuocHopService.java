@@ -98,6 +98,9 @@ public class CuocHopService {
                 cuocHopModel.setNgayHop(rs.getDate("ngayHop"));
                 cuocHopModel.setDiaDiem(rs.getString("diaDiem"));
                 cuocHopModel.setNoiDung(rs.getString("noiDung"));
+                UserMoldel nguoiTaoCuocHop = temp.getNguoiTaoCuocHop();
+                nguoiTaoCuocHop.setID(rs.getInt("ID"));
+                nguoiTaoCuocHop.setUserName(rs.getString("userName"));
                 try {
                     String sql = "SELECT * FROM nhan_khau INNER JOIN tham_gia_cuoc_hop ON nhan_khau.ID = tham_gia_cuoc_hop.idNhanKhau "
                             + "WHERE tham_gia_cuoc_hop.idCuocHop = "

@@ -71,7 +71,7 @@ public class TableModelCuocHop {
             }
             @Override
             public Class<?> getColumnClass(int columnIndex) {
-                return columnIndex == 3 ? Boolean.class : String.class;
+                return columnIndex == 4 ? Boolean.class : String.class;
             }
         };
         dtm.setColumnIdentifiers(listColumn);
@@ -81,6 +81,7 @@ public class TableModelCuocHop {
             obj[0] = item.getCuocHopModel().getMaCuocHop();
             obj[1] = item.getNguoiTaoCuocHop().getUserName();
             obj[2] = item.getCuocHopModel().getNoiDung();
+            obj[3] = item.getCuocHopModel().getNgayHop();
             dtm.addRow(obj);
         });
         return dtm;
