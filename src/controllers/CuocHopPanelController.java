@@ -31,7 +31,7 @@ public class CuocHopPanelController {
     private JPanel tableJpn;
     private final CuocHopService cuocHopService = new CuocHopService();
     private final TableModelCuocHop tableModelCuocHop = new TableModelCuocHop();
-    private final String COLUNMS[] = { "Mã cuộc họp", "Người tạo", "Tiêu đề" };
+    private final String COLUNMS[] = { "Mã cuộc họp", "Người tạo", "Tiêu đề", "Ngày họp" };
     private JFrame parentJFrame;
 
     public CuocHopPanelController(JTextField searchJtf, JPanel tableJpn) {
