@@ -1,5 +1,6 @@
 package utility;
 
+import Bean.CuocHopBean;
 import Bean.HoKhauBean;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -81,6 +82,8 @@ public class ClassTableModel {
 //        });
         return dtm;
     }
+
+    //Table cho gia dinh
     public DefaultTableModel setTableGiaDinh(List<GiaDinhModel> giaDinh, String[] listColumn) {
         final int column = listColumn.length;
         
@@ -113,6 +116,7 @@ public class ClassTableModel {
         return dtm;
     }
     
+    //Table cho ho khau
     public DefaultTableModel setTableHoKhau(List<HoKhauBean> listItem, String[] listColumn) {
         final int columns = listColumn.length;
         DefaultTableModel dtm = new DefaultTableModel()  {
@@ -134,6 +138,32 @@ public class ClassTableModel {
             obj[2] = item.getChuHo().getHoTen();
             obj[3] = item.getHoKhauModel().getDiaChi();
             obj[4] = item.getHoKhauModel().getNgayLap();
+            dtm.addRow(obj);
+        });
+        return dtm;
+    }
+
+    public DefaultTableModel setTableCuocHop(List<CuocHopBean> listItem, String[] listColumn) {
+        final int columns = listColumn.length;
+        DefaultTableModel dtm = new DefaultTableModel()  {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return super.isCellEditable(row, column); //To change body of generated methods, choose Tools | Templates.
+            }
+            @Override
+            public Class<?> getColumnClass(int columnIndex) {
+                return columnIndex == 5 ? Boolean.class : String.class;
+            }
+        };
+        dtm.setColumnIdentifiers(listColumn);
+        Object[] obj;
+        obj = new Object[columns];
+        listItem.forEach((CuocHopBean item) -> {
+            obj[0] = item.getCuocHopModel().getID();
+            obj[1] = item.getCuocHopModel().getMaCuocHop();
+            obj[2] = item.getnguoiTaoCuocHop().getUserName();
+            obj[3] = item.getCuocHopModel().getDiaDiem();
+            obj[4] = item.getCuocHopModel().getNgayTaoCuocHop();
             dtm.addRow(obj);
         });
         return dtm;
