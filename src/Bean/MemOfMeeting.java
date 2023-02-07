@@ -8,25 +8,25 @@ import models.ThamGiaCuocHopModel;
  */
 
 public class MemOfMeeting {
-    private CuocHopBean cuocHop;
+    private NhanKhauBean nhanKhau;
     private ThamGiaCuocHopModel thamGiaCuocHopModel;
 
-    public MemOfMeeting(CuocHopBean cuocHop, ThamGiaCuocHopModel thamGiaCuocHopModel) {
-        this.cuocHop = cuocHop;
+    public MemOfMeeting(NhanKhauBean nhanKhau, ThamGiaCuocHopModel thamGiaCuocHopModel) {
+        this.nhanKhau = nhanKhau;
         this.thamGiaCuocHopModel = thamGiaCuocHopModel;
     }
 
     public MemOfMeeting() {
-        this.cuocHop = new CuocHopBean();
+        this.nhanKhau = new NhanKhauBean();
         this.thamGiaCuocHopModel = new ThamGiaCuocHopModel();
     }
 
-    public CuocHopBean getCuocHop() {
-        return cuocHop;
+    public NhanKhauBean getNhanKhau() {
+        return nhanKhau;
     }
 
-    public void setCuocHop(CuocHopBean cuocHop) {
-        this.cuocHop = cuocHop;
+    public void setCuocHop(NhanKhauBean nhanKhau) {
+        this.nhanKhau = nhanKhau;
     }
 
     public ThamGiaCuocHopModel getThamGiaCuocHopModel() {
