@@ -78,11 +78,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         jpnMenu.setBackground(new java.awt.Color(153, 153, 153));
 
-        Home.setBackground(new java.awt.Color(0, 160, 50));
+        Home.setBackground(new java.awt.Color(79, 166, 209));
 
         jblTrangChu.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jblTrangChu.setForeground(new java.awt.Color(255, 255, 255));
-        jblTrangChu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-smiling-browser-48.png"))); // NOI18N
+        jblTrangChu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-smiling-browser-64.png"))); // NOI18N
         jblTrangChu.setText("Trang chủ");
 
         javax.swing.GroupLayout HomeLayout = new javax.swing.GroupLayout(Home);
@@ -279,8 +279,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel HoKhauBtn;
     private javax.swing.JPanel Home;
     private javax.swing.JPanel NhanKhauBtn;
-    private javax.swing.JPanel ThongKeBtn;
     private javax.swing.JPanel QuanLyHopBtn;
+    private javax.swing.JPanel ThongKeBtn;
     private javax.swing.JLabel jblTrangChu;
     private javax.swing.JLabel jlbHoKhau;
     private javax.swing.JLabel jlbNhanKhau;
