@@ -55,16 +55,34 @@ public class TableModelCuocHop {
         Object[] obj;
         obj = new Object[columns];
         listItem.forEach((MemOfMeeting item) -> {  
-            // obj[0] = item.getNhanKhau().getNhanKhauModel().getHoTen();
-            // obj[1] = item.getNhanKhau().getNhanKhauModel().getNamSinh();
+            obj[0] = item.getNhanKhau().getNhanKhauModel().getHoTen();
+            obj[1] = item.getNhanKhau().getNhanKhauModel().getNamSinh();
             dtm.addRow(obj);
         });
         return dtm;
     }
 
-    public DefaultTableModel setTableCuocHop(List<CuocHopBean> listItems, String[] listColumn) {
+    public DefaultTableModel setTableCuocHop(List<CuocHopBean> listItem, String[] listColumn) {
         final int columns = listColumn.length;
-        // TODO
-        return null;
+        DefaultTableModel dtm = new DefaultTableModel()  {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return super.isCellEditable(row, column); //To change body of generated methods, choose Tools | Templates.
+            }
+            @Override
+            public Class<?> getColumnClass(int columnIndex) {
+                return columnIndex == 3 ? Boolean.class : String.class;
+            }
+        };
+        dtm.setColumnIdentifiers(listColumn);
+        Object[] obj;
+        obj = new Object[columns];
+        listItem.forEach((CuocHopBean item) -> {  
+            obj[0] = item.getCuocHopModel().getMaCuocHop();
+            obj[1] = item.getNguoiTaoCuocHop().getUserName();
+            obj[2] = item.getCuocHopModel().getNoiDung();
+            dtm.addRow(obj);
+        });
+        return dtm;
     }
 }
