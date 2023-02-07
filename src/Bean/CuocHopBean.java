@@ -43,11 +43,11 @@ public class CuocHopBean {
         this.cuocHopModel = cuocHopModel;
     }
 
-    public UserMoldel getnguoiTaoCuocHop() {
+    public UserMoldel getNguoiTaoCuocHop() {
         return nguoiTaoCuocHop;
     }
     
-    public void setnguoiTaoCuocHop(UserMoldel nguoiTaoCuocHop) {
+    public void setNguoiTaoCuocHop(UserMoldel nguoiTaoCuocHop) {
         this.nguoiTaoCuocHop = nguoiTaoCuocHop;
     }
 
