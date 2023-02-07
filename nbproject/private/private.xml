@@ -7,10 +7,8 @@
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/HoKhauManagerFrame/ThemMoiHoKhau.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/NhanKhauManagerFrame/KhaiTuJFrame.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/MainFrame.java</file>
-            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/CuocHopManagerFrame/ChooseMeetingAttendee.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/NhanKhauManagePanel.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/HoKhauManagerFrame/ChuyenDiNoiKhac.java</file>
-            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/CuocHopManagerFrame/ChangeListMeetingAttendeeJframe.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/LoginUI.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/NhanKhauManagerController/TieuSuController.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/services/HoKhauService.java</file>
@@ -32,8 +30,6 @@
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/NhanKhauManagerFrame/AddNewPeopleJFrame.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/Bean/DanhMucBean.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/Bean/HoKhauBean.java</file>
-            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/services/CuocHopService.java</file>
-            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/CuocHopManagerFrame/ThemMoiCuocHop.java</file>
         </group>
     </open-files>
 </project-private>

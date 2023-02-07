@@ -64,7 +64,7 @@ public class HomeCotroller {
             preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             rs = preparedStatement.executeQuery();
             while (rs.next()){
-                this.tongHoKhauLb.setText(String.valueOf(rs.getInt("tong")));
+                this.tongCuocHopLb.setText(String.valueOf(rs.getInt("tong")));
             }
             preparedStatement.close();
 
