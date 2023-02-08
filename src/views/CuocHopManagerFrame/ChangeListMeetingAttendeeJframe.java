@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import Bean.MemOfMeeting;
 import controllers.CuocHopManagerController.ChangeListMeetingAttendeeController;
@@ -35,6 +39,20 @@ public class ChangeListMeetingAttendeeJframe extends javax.swing.JFrame {
         this.listMemberTemp.addAll(listMember);
         this.parentJFrame = parentJFrame;
         // this.controller = new ChangeListMeetingAttendeeController(this.listMemberTemp, addBtn, removeBtn);
+        this.parentJFrame.setEnabled(false);
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                close();
+            }
+        });
+    }
+    
+    private void close() {
+        if (JOptionPane.showConfirmDialog(this, "Are you sure to close???", "confirm", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION) {
+            this.parentJFrame.setEnabled(true);
+            dispose();
+        }
     }
 
     /**
@@ -46,7 +64,7 @@ public class ChangeListMeetingAttendeeJframe extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
