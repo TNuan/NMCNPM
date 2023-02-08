@@ -55,7 +55,7 @@ public class ThemMoiCuocHop extends javax.swing.JFrame {
         }
     }
 
-    private void setDataThanhVien() {
+    void setDataThanhVien() {
         this.controller.setData(this.list, this.memTableJpn);
     }
 
