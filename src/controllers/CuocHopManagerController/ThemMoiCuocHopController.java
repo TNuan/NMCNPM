@@ -22,7 +22,7 @@ public class ThemMoiCuocHopController {
     private UserMoldel nguoiTaoCuocHop;
     private List<MemOfMeeting> listThanhVien;
     private JPanel memTableJpn;
-    private TableModelCuocHop tableModelHoKhau = new TableModelCuocHop();
+    private TableModelCuocHop tableModelCuocHop = new TableModelCuocHop();
     private final CuocHopService cuocHopService = new CuocHopService();
     private final String[] COLUMNS= {"Họ tên", "Ngày sinh", "Giới tính"};
     
@@ -33,7 +33,7 @@ public class ThemMoiCuocHopController {
      * @param tablePanel 
      */
     public void setData(List<MemOfMeeting> listMember, JPanel tablePanel) {
-        DefaultTableModel model_mem = this.tableModelHoKhau.setTableMember(listMember, COLUMNS);
+        DefaultTableModel model_mem = this.tableModelCuocHop.setTableMember(listMember, COLUMNS);
         JTable table_mem = new JTable(model_mem){
             @Override
             public boolean editCellAt(int row, int column, EventObject e) {
