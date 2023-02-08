@@ -25,7 +25,7 @@ public class MemOfMeeting {
         return nhanKhau;
     }
 
-    public void setCuocHop(NhanKhauBean nhanKhau) {
+    public void setNhanKhau(NhanKhauBean nhanKhau) {
         this.nhanKhau = nhanKhau;
     }
 

@@ -39,7 +39,7 @@ public class ChangeListMeetingAttendeeJframe extends javax.swing.JFrame {
         this.listMemberTemp = new ArrayList<>();
         this.listMemberTemp.addAll(listMember);
         this.parentJFrame = parentJFrame;
-        // this.controller = new ChangeListMeetingAttendeeController(this.listMemberTemp, addBtn, removeBtn);
+        this.controller = new ChangeListMeetingAttendeeController(this.listMemberTemp, addBtn, removeBtn, jTextField1, PeopleTableJpn, MemTableJpn);
         this.parentJFrame.setEnabled(false);
         this.addWindowListener(new WindowAdapter() {
             @Override
