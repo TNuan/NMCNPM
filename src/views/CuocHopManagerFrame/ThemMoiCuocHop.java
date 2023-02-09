@@ -17,6 +17,7 @@ import Bean.CuocHopBean;
 import Bean.MemOfMeeting;
 import Bean.NhanKhauBean;
 import controllers.CuocHopManagerController.ThemMoiCuocHopController;
+import controllers.LoginController;
 import models.ThamGiaCuocHopModel;
 
 /**
@@ -291,20 +292,20 @@ public class ThemMoiCuocHop extends javax.swing.JFrame {
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         if (this.maCuocHopJtf.getText().trim().isEmpty()
+            || this.ngayHopDateC == null    
             || this.diaDiemJtf.getText().trim().isEmpty()
             // || this.noiDungJtf.getText().trim().isEmpty()
-            || this.ngayHopDateC == null
             || this.list.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Vui lòng nhập hết các thông tin bắt buộc", "Warning", JOptionPane.ERROR_MESSAGE);
         } else {
-            // this.cuocHopBean.set(chuHo.getNhanKhauModel());
             this.list.forEach(person -> {
                 ThamGiaCuocHopModel temp = new ThamGiaCuocHopModel();
                 temp.setIdNhanKhau(person.getNhanKhau().getNhanKhauModel().getID());
-                // temp.setQuanHeVoiChuHo(person.getThanhVienCuaHoModel().getQuanHeVoiChuHo());
                 this.cuocHopBean.getListThamGiaCuocHop().add(temp);
             });
             this.cuocHopBean.getCuocHopModel().setMaCuocHop(maCuocHopJtf.getText().trim());
+            this.cuocHopBean.getCuocHopModel().setIdNguoiTaoCuocHop(LoginController.currentUser.getID());
+            this.cuocHopBean.getCuocHopModel().setNgayHop(ngayHopDateC.getDate());
             this.cuocHopBean.getCuocHopModel().setDiaDiem(diaDiemJtf.getText().trim());
             this.cuocHopBean.getCuocHopModel().setNoiDung(noiDungJtf.getText().trim());
             try {
@@ -312,7 +313,7 @@ public class ThemMoiCuocHop extends javax.swing.JFrame {
                 this.parentJFrame.setEnabled(true);
                 dispose();
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                System.out.println("Error here :" + e.getMessage());
             }
         }
     }//GEN-LAST:event_saveBtnActionPerformed

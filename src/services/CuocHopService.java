@@ -30,14 +30,18 @@ public class CuocHopService {
     // them moi cuoc hop
     public boolean addNew(CuocHopBean cuocHopBean) throws ClassNotFoundException, SQLException {
         Connection connection = MysqlConnection.getMysqlConnection();
-        String query = "INSERT INTO cuoc_hop(maCuocHop, ngayHop, ngayTaoCuocHop, diaDiem, noiDung, idNguoiTaoCuocHop)"
-                + " values (?, ?, NOW(), ?, ?, ?)";
+        String query = "INSERT INTO cuoc_hop(maCuocHop, ngayHop, diaDiem, noiDung, idNguoiTaoCuocHop, ngayTaoCuocHop)"
+                + " values (?, ?, ?, ?, ?, NOW())";
         PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
         preparedStatement.setString(1, cuocHopBean.getCuocHopModel().getMaCuocHop());
-        preparedStatement.setDate(2, (Date) cuocHopBean.getCuocHopModel().getNgayHop());
-        preparedStatement.setString(4, cuocHopBean.getCuocHopModel().getDiaDiem());
-        preparedStatement.setString(5, cuocHopBean.getCuocHopModel().getNoiDung());
-        preparedStatement.setInt(6, cuocHopBean.getNguoiTaoCuocHop().getID());
+        java.sql.Date ngayHop = new java.sql.Date(cuocHopBean.getCuocHopModel().getNgayHop().getTime());
+        preparedStatement.setDate(2, ngayHop);
+        preparedStatement.setString(3, cuocHopBean.getCuocHopModel().getDiaDiem());
+        preparedStatement.setString(4, cuocHopBean.getCuocHopModel().getNoiDung());
+        preparedStatement.setInt(5, LoginController.currentUser.getID());
+        // java.sql.Date createDate = new java.sql.Date(quanlynhankhau.QuanLyNhanKhau.calendar.getTime().getTime());
+        // preparedStatement.setDate(3, createDate);
+        // System.out.println("something here: " + preparedStatement);
 
         preparedStatement.executeUpdate();
         ResultSet rs = preparedStatement.getGeneratedKeys();
