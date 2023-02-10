@@ -8,6 +8,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.EventObject;
 import java.util.List;
+
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -17,6 +19,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import services.CuocHopService;
+import services.StringService;
 import utility.TableModelCuocHop;
 import views.infoViews.InfoJframe;
 
@@ -26,17 +29,19 @@ import views.infoViews.InfoJframe;
  */
 
 public class CuocHopPanelController {
-    private List<CuocHopBean> list;
     private JTextField searchJtf;
     private JPanel tableJpn;
+    private JComboBox StatusJcb;
+    private List<CuocHopBean> list;
     private final CuocHopService cuocHopService = new CuocHopService();
     private final TableModelCuocHop tableModelCuocHop = new TableModelCuocHop();
     private final String COLUNMS[] = { "Mã cuộc họp", "Người tạo", "Nội dung chính", "Ngày họp" };
     private JFrame parentJFrame;
 
-    public CuocHopPanelController(JTextField searchJtf, JPanel tableJpn) {
+    public CuocHopPanelController(JTextField searchJtf, JPanel tableJpn, JComboBox statusJcb) {
         this.searchJtf = searchJtf;
         this.tableJpn = tableJpn;
+        this.StatusJcb = statusJcb;
         this.list = cuocHopService.getListCuocHop();
         setData();
         initAction();
@@ -79,7 +84,10 @@ public class CuocHopPanelController {
         });
     }
 
-    private void setData() {
+    public void setData() {
+        String status = StringService.covertToString((String)this.StatusJcb.getSelectedItem());
+        System.out.println("Status is : " + status);
+        list = cuocHopService.statisticCuocHop(status);
         DefaultTableModel model = tableModelCuocHop.setTableCuocHop(list, COLUNMS);
 
         JTable table = new JTable(model) {
@@ -145,5 +153,12 @@ public class CuocHopPanelController {
         this.tableJpn = tableJpn;
     }
     
+    public JComboBox getStatusJcb() {
+        return StatusJcb;
+    }
+
+    public void setStatusJcb(JComboBox StatusJcb) {
+        this.StatusJcb = StatusJcb;
+    }
 
 }
