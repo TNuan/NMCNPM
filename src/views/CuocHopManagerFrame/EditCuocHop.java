@@ -28,7 +28,7 @@ public class EditCuocHop extends javax.swing.JFrame {
         this.parentJFrame = parentJFrame;
         this.parentJFrame.setEnabled(false);
         controller = new EditCuocHopController(cuocHopBean, searchJtf, tableJpn);
-        controller.setDataJtf(maCuocHopJtf, diaDiemJtf, noiDungJtf, diaChiHienTaiJtf);
+        controller.setDataJtf(maCuocHopJtf, diaDiemJtf, noiDungJtf, ngayHopDateC);
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
