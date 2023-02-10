@@ -210,7 +210,7 @@ public class CuocHopService {
                         listThamGiaCuocHop.add(thamGiaCuocHopModel);
                     }
                 } catch (Exception e) {
-                    System.out.println("services.CuocHopService.getListCuocHop()");
+                    System.out.println("services.CuocHopService.statisticCuocHop()");
                     System.out.println(e.getMessage());
                 }
                 list.add(temp);
@@ -293,4 +293,48 @@ public class CuocHopService {
         }
         return list;
     }
+
+    // edit cuoc hop duoc chon
+    public boolean editCuocHop(int idCuocHop, String maCuocHop, String diaDiem, String noiDungChinh, Date ngayHop) {
+        java.sql.Date ngayHopSQL = new java.sql.Date(ngayHop.getTime());
+        String query = "UPDATE cuoc_hop SET maCuocHop = '" + maCuocHop + "',"
+                    + "diaDiem = " + diaDiem + ","
+                    + "noiDung = " + noiDungChinh + ","
+                    + "ngayHop = " + ngayHopSQL
+                    + "WHERE cuoc_hop.ID = " + idCuocHop;
+        try {
+            Connection connection = MysqlConnection.getMysqlConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+            return true;
+        } catch (Exception e) {
+            System.out.println("services.CuocHopService.editCuocHop()");
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Có lỗi xảy ra! vui lòng kiểm tra lại.", "Warning!!", JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+    }
+
+
+    // delete cuoc hop duoc chon 
+    public boolean deleteCuocHop(int idCuocHop) {
+        String query = "DELETE FROM cuoc_hop from ID = " + idCuocHop;
+        try {
+            Connection connection = MysqlConnection.getMysqlConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+            return true;
+        } catch (Exception e) {
+            System.out.println("services.CuocHopService.deleteCuocHop()");
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Có lỗi xảy ra! vui lòng kiểm tra lại.", "Warning!!", JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        
+    }
+
 }
