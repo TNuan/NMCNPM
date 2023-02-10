@@ -76,6 +76,7 @@ public class CuocHopBean {
                 + "<p>Người tạo cuộc họp: <b>" + nguoiTaoCuocHop.getUserName() + "</p>"
                 + "<p>Ngày tạo: <b>" + cuocHopModel.getNgayTaoCuocHop().toString() + "</p>"
                 + "<p>Địa điểm: <b>" + cuocHopModel.getDiaDiem() + "</p>"
+                + "<p>Nội dung: <b>" + cuocHopModel.getNoiDung() + "</p>"
                 + "<h4>Danh sách thành viên tham gia họp<table>"
                 + "<tr>"
                 + "<th>Họ tên</th>"
