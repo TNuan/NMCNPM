@@ -337,4 +337,19 @@ public class CuocHopService {
         
     }
 
+
+    public int checkMaCuocHop(String maCuocHop) {
+        try {
+            Connection connection = MysqlConnection.getMysqlConnection();
+            String query = "SELECT * FROM cuoc_hop WHERE maCuocHop = " + maCuocHop; 
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("ID");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Có lỗi xảy ra! Vui lòng kiểm tra lại.", "Warning!!", JOptionPane.WARNING_MESSAGE);
+        }
+        return -1;
+    }
 }
