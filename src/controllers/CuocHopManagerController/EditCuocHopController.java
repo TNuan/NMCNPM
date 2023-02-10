@@ -133,5 +133,40 @@ public class EditCuocHopController {
         tableJpn.repaint();
     }
 
-    
+    public CuocHopBean getCuocHopBean() {
+        return cuocHopBean;
+    }
+
+    public void setCuocHopBean(CuocHopBean cuocHopBean) {
+        this.cuocHopBean = cuocHopBean;
+    }
+
+    public CuocHopService getCuocHopService() {
+        return cuocHopService;
+    }
+
+    public JTextField getSearchJtf() {
+        return searchJtf;
+    }
+
+    public void setSearchJtf(JTextField searchJtf) {
+        this.searchJtf = searchJtf;
+    }
+
+    public JPanel getTableJpn() {
+        return tableJpn;
+    }
+
+    public void setTableJpn(JPanel tableJpn) {
+        this.tableJpn = tableJpn;
+    }
+
+    public List<CuocHopBean> getListCuocHop() {
+        return list;
+    }
+
+    public void setListCuocHop(List<CuocHopBean> list) {
+        this.list = list;
+    }
+
 }
