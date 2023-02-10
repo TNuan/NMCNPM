@@ -311,4 +311,25 @@ public class CuocHopService {
             System.out.println(e.getMessage());
         }
     }
+
+
+    // delete cuoc hop duoc chon 
+    public boolean deleteCuocHop(int idCuocHop) {
+        String query = "DELETE FROM cuoc_hop from ID = " + idCuocHop;
+        try {
+            Connection connection = MysqlConnection.getMysqlConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+            return true;
+        } catch (Exception e) {
+            System.out.println("services.CuocHopService.deleteCuocHop()");
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Có lỗi xảy ra! vui lòng kiểm tra lại.", "Warning!!", JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        
+    }
+
 }
