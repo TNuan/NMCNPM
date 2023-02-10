@@ -332,7 +332,8 @@ public class EditCuocHop extends javax.swing.JFrame {
             || this.noiDungJtf.getText().trim().isEmpty() || this.ngayHopDateC == null) {
             JOptionPane.showMessageDialog(null, "Vui lòng nhập hết các trường bắt buộc!!", "Warning!", JOptionPane.NO_OPTION);
         } else {
-            this.controller.getCuocHopService().edit(this.cuocHopBean.getCuocHopModel().getID(), diaDiemJtf.getText().trim(), noiDungJtf.getText().trim());
+            java.sql.Date ngayHopSQL= new java.sql.Date(ngayHopDateC.getDate().getTime());
+            this.controller.getCuocHopService().editCuocHop(this.cuocHopBean.getCuocHopModel().getID(),maCuocHopJtf.getText().trim(), diaDiemJtf.getText().trim(), noiDungJtf.getText().trim(), ngayHopSQL);
             this.parentJFrame.setEnabled(true);
             dispose();
         }

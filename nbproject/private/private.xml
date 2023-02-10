@@ -4,11 +4,17 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/HoKhauManagerFrame/ThemMoiHoKhau.java</file>
+            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/NhanKhauManagerController/KhaiTuController.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/NhanKhauManagerFrame/KhaiTuJFrame.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/ThongKePanelController.java</file>
+            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/HoKhauManagerController/ThemMoiController.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/MainFrame.java</file>
+            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/services/NhanKhauService.java</file>
+            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/CuocHopManagerFrame/DeleteCuocHop.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/NhanKhauManagePanel.java</file>
+            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/CuocHopManagerFrame/EditCuocHop.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/HoKhauManagerFrame/ChuyenDiNoiKhac.java</file>
+            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/NhanKhauManagerController/DangKyTamTruController.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/LoginUI.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/NhanKhauManagerController/TieuSuController.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/services/HoKhauService.java</file>
@@ -16,8 +22,10 @@
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/NhanKhauManagerFrame/TieuSuJFrame.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/utility/TableModelCuocHop.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/HoKhauManagePanel.java</file>
+            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/CuocHopManagerController/XoaCuocHopController.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/utility/TableModelHoKhau.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/HomePagePanel.java</file>
+            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/HoKhauManagerController/ChuyenDiNoiKhacController.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/NhanKhauManagerFrame/DangKyTamTruJFrame.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/NhanKhauManagerFrame/DangKyTamVangJFrame.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/HoKhauManagerFrame/ChoosePeople.java</file>
@@ -25,12 +33,14 @@
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/ThongKePanel.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/HoKhauPanelController.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/HoKhauManagerController/ChangeListPeopleController.java</file>
+            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/HoKhauManagerController/TachHoKhauController.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/TimKiemPanel.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/infoViews/InfoJframe.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/NhanKhauManagerFrame/AddNewPeopleJFrame.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/Bean/DanhMucBean.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/Bean/HoKhauBean.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/services/CuocHopService.java</file>
+            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/CuocHopManagerFrame/ThemMoiCuocHop.java</file>
         </group>
     </open-files>
 </project-private>
