@@ -210,7 +210,7 @@ public class CuocHopService {
                         listThamGiaCuocHop.add(thamGiaCuocHopModel);
                     }
                 } catch (Exception e) {
-                    System.out.println("services.CuocHopService.getListCuocHop()");
+                    System.out.println("services.CuocHopService.statisticCuocHop()");
                     System.out.println(e.getMessage());
                 }
                 list.add(temp);
@@ -292,5 +292,23 @@ public class CuocHopService {
             System.out.println(e.getMessage());
         }
         return list;
+    }
+
+    // edit cuoc hop duoc chon
+    public void editCuocHop(int idCuocHop, String maCuocHop, String diaDiem, String noiDungChinh, Date ngayHop) {
+        java.sql.Date ngayHopSQL = new java.sql.Date(ngayHop.getTime());
+        String query = "UPDATE cuoc_hop SET maCuocHop = '" + maCuocHop + "',"
+                    + "diaDiem = " + diaDiem + ","
+                    + "noiDung = " + noiDungChinh + ","
+                    + "ngayHop = " + ngayHopSQL
+                    + "WHERE cuoc_hop.ID = " + idCuocHop;
+        try {
+            Connection connection = MysqlConnection.getMysqlConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            int rs = preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("services.CuocHopService.editCuocHop()");
+            System.out.println(e.getMessage());
+        }
     }
 }
