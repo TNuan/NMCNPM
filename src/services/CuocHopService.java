@@ -295,7 +295,7 @@ public class CuocHopService {
     }
 
     // edit cuoc hop duoc chon
-    public void editCuocHop(int idCuocHop, String maCuocHop, String diaDiem, String noiDungChinh, Date ngayHop) {
+    public boolean editCuocHop(int idCuocHop, String maCuocHop, String diaDiem, String noiDungChinh, Date ngayHop) {
         java.sql.Date ngayHopSQL = new java.sql.Date(ngayHop.getTime());
         String query = "UPDATE cuoc_hop SET maCuocHop = '" + maCuocHop + "',"
                     + "diaDiem = " + diaDiem + ","
@@ -305,10 +305,15 @@ public class CuocHopService {
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            int rs = preparedStatement.executeUpdate();
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+            return true;
         } catch (Exception e) {
             System.out.println("services.CuocHopService.editCuocHop()");
             System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Có lỗi xảy ra! vui lòng kiểm tra lại.", "Warning!!", JOptionPane.WARNING_MESSAGE);
+            return false;
         }
     }
 
