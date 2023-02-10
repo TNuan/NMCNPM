@@ -296,11 +296,11 @@ public class CuocHopService {
 
     // edit cuoc hop duoc chon
     public boolean editCuocHop(int idCuocHop, String maCuocHop, String diaDiem, String noiDungChinh, Date ngayHop) {
-        java.sql.Date ngayHopSQL = new java.sql.Date(ngayHop.getTime());
+        
         String query = "UPDATE cuoc_hop SET maCuocHop = '" + maCuocHop + "',"
                     + "diaDiem = " + diaDiem + ","
                     + "noiDung = " + noiDungChinh + ","
-                    + "ngayHop = " + ngayHopSQL
+                    + "ngayHop = " + ngayHop
                     + "WHERE cuoc_hop.ID = " + idCuocHop;
         try {
             Connection connection = MysqlConnection.getMysqlConnection();

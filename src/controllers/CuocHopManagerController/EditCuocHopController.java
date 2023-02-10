@@ -42,6 +42,7 @@ public class EditCuocHopController {
         this.cuocHopBean = cuocHopBean;
         this.searchJtf = searchJtf;
         this.tableJpn = tableJpn;
+        this.list = cuocHopService.getListCuocHop();
         setData();
         initAction();
     }
