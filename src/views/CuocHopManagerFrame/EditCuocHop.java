@@ -60,7 +60,6 @@ public class EditCuocHop extends javax.swing.JFrame {
         searchJtf = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        tableJpn = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         maCuocHopJtf = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -75,6 +74,7 @@ public class EditCuocHop extends javax.swing.JFrame {
         cancelBtn = new javax.swing.JButton();
         confirmBtn = new javax.swing.JButton();
         ngayHopDateC = new com.toedter.calendar.JDateChooser();
+        tableJpn = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -89,19 +89,6 @@ public class EditCuocHop extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("Chọn cuộc họp");
-
-        tableJpn.setBackground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout tableJpnLayout = new javax.swing.GroupLayout(tableJpn);
-        tableJpn.setLayout(tableJpnLayout);
-        tableJpnLayout.setHorizontalGroup(
-            tableJpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 437, Short.MAX_VALUE)
-        );
-        tableJpnLayout.setVerticalGroup(
-            tableJpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setText("Mã cuộc họp");
@@ -156,6 +143,19 @@ public class EditCuocHop extends javax.swing.JFrame {
 
         ngayHopDateC.setEnabled(false);
 
+        tableJpn.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout tableJpnLayout = new javax.swing.GroupLayout(tableJpn);
+        tableJpn.setLayout(tableJpnLayout);
+        tableJpnLayout.setHorizontalGroup(
+            tableJpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
+        );
+        tableJpnLayout.setVerticalGroup(
+            tableJpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -185,7 +185,7 @@ public class EditCuocHop extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel12))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(0, 64, Short.MAX_VALUE)
+                                .addGap(0, 102, Short.MAX_VALUE)
                                 .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(confirmBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,7 +203,6 @@ public class EditCuocHop extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -226,11 +225,13 @@ public class EditCuocHop extends javax.swing.JFrame {
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(ngayHopDateC, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(confirmBtn)))
-                    .addComponent(tableJpn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(tableJpn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -244,7 +245,7 @@ public class EditCuocHop extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(searchJtf, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(searchJtf, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -279,7 +280,7 @@ public class EditCuocHop extends javax.swing.JFrame {
     }// GEN-LAST:event_cancelBtnActionPerformed
 
     private void confirmBtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_confirmBtnActionPerformed
-        if (this.noiDungJtf.getText().trim().isEmpty() || this.maCuocHopJtf.getText().trim().isEmpty()
+        if (this.diaDiemJtf.getText().trim().isEmpty() || this.maCuocHopJtf.getText().trim().isEmpty()
             || this.noiDungJtf.getText().trim().isEmpty() || this.ngayHopDateC == null) {
             JOptionPane.showMessageDialog(null, "Vui lòng nhập hết các trường bắt buộc!!", "Warning!", JOptionPane.NO_OPTION);
         } else {
