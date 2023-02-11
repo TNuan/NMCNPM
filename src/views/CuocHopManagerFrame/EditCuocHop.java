@@ -1,9 +1,7 @@
 package views.CuocHopManagerFrame;
 
-import views.HoKhauManagerFrame.*;
 import Bean.CuocHopBean;
 import controllers.CuocHopManagerController.EditCuocHopController;
-import controllers.HoKhauManagerController.ChuyenDiNoiKhacController;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
@@ -20,7 +18,7 @@ public class EditCuocHop extends javax.swing.JFrame {
     private JFrame parentJFrame;
 
     /**
-     * Creates new form ChuyenDiNoiKhac
+     * Creates new form Edit cuoc hop
      */
     public EditCuocHop(JFrame parentJFrame) {
         initComponents();

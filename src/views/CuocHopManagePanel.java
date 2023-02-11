@@ -7,6 +7,7 @@ package views;
 import javax.swing.JFrame;
 
 import controllers.CuocHopPanelController;
+import views.CuocHopManagerFrame.DeleteCuocHop;
 import views.CuocHopManagerFrame.EditCuocHop;
 import views.CuocHopManagerFrame.ThemMoiCuocHop;
 
@@ -171,7 +172,10 @@ public class CuocHopManagePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_editBtnActionPerformed
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
-        // TODO add your handling code here:
+        DeleteCuocHop deleteCuocHop = new DeleteCuocHop(this.parentFrame);
+        deleteCuocHop.setLocationRelativeTo(null);
+        deleteCuocHop.setResizable(false);
+        deleteCuocHop.setVisible(true);
     }//GEN-LAST:event_deleteBtnActionPerformed
 
 
