@@ -27,12 +27,12 @@ import Bean.CuocHopBean;
 
 public class EditCuocHopController {
     private CuocHopBean cuocHopBean;
-    private final CuocHopService cuocHopService = new CuocHopService();
     private JTextField searchJtf;
     private JPanel tableJpn;
     private List<CuocHopBean> list;
+    private final CuocHopService cuocHopService = new CuocHopService();
     private final TableModelCuocHop tableModelCuocHop = new TableModelCuocHop();
-    private final String COLUNMS[] = { "Mã cuộc họp", "Người tạo cuộc họp", "Nội dung chính", "Ngày họp" };
+    private final String COLUNMS[] = { "Mã cuộc họp", "Người tạo", "Nội dung chính", "Ngày họp" };
     private JTextField maCuocHopJtf;
     private JTextField diaDiemJtf;
     private JTextField noiDungJtf;
