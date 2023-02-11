@@ -27,6 +27,7 @@ public class LoginController {
             if (rs.getString("passwd") == null ? passwod == null : rs.getString("passwd").equals(passwod)) {
                 LoginController.currentUser.setID(rs.getInt("ID"));
                 LoginController.currentUser.setUserName(rs.getString("userName"));
+                LoginController.currentUser.setPasswd(rs.getString("passwd"));
                 return true;
             }
         }

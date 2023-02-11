@@ -167,15 +167,15 @@ public class DeleteCuocHop extends javax.swing.JFrame {
 
     private void xacNhanBtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_huyBtnActionPerformed
         String confirmPassword = ConfirmByPassword.enterConfirmByPassword();
-        if (confirmPassword != LoginController.currentUser.getPasswd()) {
+        if (!confirmPassword.equals(LoginController.currentUser.getPasswd()) ) {
             JOptionPane.showMessageDialog(null, "Xóa không thành công. Mật khẩu không đúng", "Warning!", JOptionPane.NO_OPTION);
         } else {
-            this.controller.getCuocHopService().deleteCuocHop(this.cuocHopBean.getCuocHopModel().getID());
-            JOptionPane.showMessageDialog(null, "Xóa thành công", "Warning!", JOptionPane.NO_OPTION);
-            this.parentJFrame.setEnabled(true);
-            dispose();
+            if (this.controller.getCuocHopService().deleteCuocHop(this.cuocHopBean.getCuocHopModel().getID())) {
+                JOptionPane.showMessageDialog(null, "Xóa thành công", "Warning!", JOptionPane.NO_OPTION);
+                this.parentJFrame.setEnabled(true);
+                dispose();
+            }
         }
-        close();
     }// GEN-LAST:event_huyBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
