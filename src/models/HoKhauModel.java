@@ -16,6 +16,7 @@ public class HoKhauModel {
     private Date ngayChuyDi;
     private String lyDoChuyen;
     private int nguoiThucHien;
+    private int soLanThamGiaHop;
 
     public int getID() {
         return ID;
@@ -87,6 +88,14 @@ public class HoKhauModel {
 
     public void setNguoiThucHien(int nguoiThucHien) {
         this.nguoiThucHien = nguoiThucHien;
+    }
+
+    public int soLanThamGiaHop() {
+        return soLanThamGiaHop;
+    }
+
+    public void soLanThamGiaHop(int nguoiThucHien) {
+        this.soLanThamGiaHop = nguoiThucHien;
     }
     
     

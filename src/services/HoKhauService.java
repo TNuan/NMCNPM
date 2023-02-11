@@ -140,6 +140,7 @@ public class HoKhauService {
             connection.close();
             Connection conn = MysqlConnection.getMysqlConnection();
         } catch (Exception e) {
+            System.out.println("services.HoKhauService.getListHoKhau()");
             System.out.println(e.getMessage());
         }
         return list;
@@ -279,5 +280,24 @@ public class HoKhauService {
             System.out.println("services.HoKhauService.chuyenDi()");
             System.out.println(e.getMessage());
         }
+    }
+
+    public int getSoLanThamGiaHop(int ID) {
+        try {
+            Connection connection = MysqlConnection.getMysqlConnection();
+            String query_count = "SELECT COUNT(idCuocHop) FROM "
+                        + "(SELECT DISTINCT idCuocHop, idHoKhau FROM tham_gia_cuoc_hop INNER JOIN thanh_vien_cua_ho ON thanh_vien_cua_ho.idNhanKhau = tham_gia_cuoc_hop.idNhanKhau) AS subquery"
+                        + "WHERE idHoKhau = "+ ID;
+            PreparedStatement preparedStatement_count = (PreparedStatement)connection.prepareStatement(query_count);
+            ResultSet rs_count = preparedStatement_count.executeQuery();
+            System.out.println(rs_count);
+            if (rs_count.next()) {
+                return rs_count.getInt("COUNT(idCuocHop)");
+            }
+        } catch (Exception e) {
+            System.out.println("services.HoKhauService.getSoLanThamGiaHop()");
+            System.out.println(e.getMessage());
+        }
+        return 0;
     }
 }
