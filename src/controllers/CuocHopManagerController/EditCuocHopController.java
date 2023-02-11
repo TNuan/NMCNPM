@@ -163,11 +163,11 @@ public class EditCuocHopController {
         this.tableJpn = tableJpn;
     }
 
-    public List<CuocHopBean> getListCuocHop() {
+    public List<CuocHopBean> getList() {
         return list;
     }
 
-    public void setListCuocHop(List<CuocHopBean> list) {
+    public void setList(List<CuocHopBean> list) {
         this.list = list;
     }
 
