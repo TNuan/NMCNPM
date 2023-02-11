@@ -320,7 +320,7 @@ public class CuocHopService {
 
     // delete cuoc hop duoc chon 
     public boolean deleteCuocHop(int idCuocHop) {
-        String query = "DELETE FROM cuoc_hop from ID = " + idCuocHop;
+        String query = "DELETE FROM cuoc_hop WHERE ID = " + idCuocHop;
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);

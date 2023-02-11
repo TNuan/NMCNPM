@@ -33,7 +33,6 @@ import utility.TableModelCuocHop;
 
 public class XoaCuocHopController {
     private CuocHopBean cuocHopBean;
-    private JTextField passwordJtf;
     private JTextField maCuocHopJtf;
     private JPanel tableJpn;
     private List<CuocHopBean> list;
@@ -105,16 +104,18 @@ public class XoaCuocHopController {
         table.repaint();
         table.setFont(new Font("Arial", Font.PLAIN, 14));
 
-        // table.addMouseListener(new MouseAdapter() {
-        //     @Override
-        //     public void mouseClicked(MouseEvent e) {
-        //         CuocHopBean temp = list.get(table.getSelectedRow());
-        //         cuocHopBean.setNguoiTaoCuocHop(temp.getNguoiTaoCuocHop());
-        //         cuocHopBean.setCuocHopModel(temp.getCuocHopModel());
-        //         cuocHopBean.setListNhanKhauModels(temp.getListNhanKhauModels());
-        //         cuocHopBean.setListThamGiaCuocHop(temp.getListThamGiaCuocHop());
-        //     } 
-        // });
+        table.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                CuocHopBean temp = list.get(table.getSelectedRow());
+                cuocHopBean.setNguoiTaoCuocHop(temp.getNguoiTaoCuocHop());
+                cuocHopBean.setCuocHopModel(temp.getCuocHopModel());
+                cuocHopBean.setListNhanKhauModels(temp.getListNhanKhauModels());
+                cuocHopBean.setListThamGiaCuocHop(temp.getListThamGiaCuocHop());
+
+                maCuocHopJtf.setText(cuocHopBean.getCuocHopModel().getMaCuocHop());
+            } 
+        });
 
         JScrollPane scroll = new JScrollPane();
         scroll.getViewport().add(table);
