@@ -5,6 +5,7 @@ import java.util.List;
 import models.HoKhauModel;
 import models.NhanKhauModel;
 import models.ThanhVienCuaHoModel;
+import services.HoKhauService;
 
 /**
  *
@@ -17,12 +18,15 @@ public class HoKhauBean {
     private NhanKhauModel chuHo;
     private List<NhanKhauModel> listNhanKhauModels;
     private List<ThanhVienCuaHoModel> listThanhVienCuaHo;
+    private int soLanThamGiaHop;
+    private final HoKhauService hoKhauService = new HoKhauService();
 
     public HoKhauBean(HoKhauModel hoKhauModel, NhanKhauModel chuHo, List<NhanKhauModel> listNhanKhauModels, List<ThanhVienCuaHoModel> listThanhVienCuaHo) {
         this.hoKhauModel = hoKhauModel;
         this.chuHo = chuHo;
         this.listNhanKhauModels = listNhanKhauModels;
         this.listThanhVienCuaHo = listThanhVienCuaHo;
+        this.soLanThamGiaHop = hoKhauService.getSoLanThamGiaHop(this.hoKhauModel.getID());
     }
     
     public HoKhauBean() {
@@ -30,6 +34,7 @@ public class HoKhauBean {
         this.chuHo = new NhanKhauModel();
         this.listNhanKhauModels = new ArrayList<>();
         this.listThanhVienCuaHo = new ArrayList<>();
+        this.soLanThamGiaHop = 0;
     }
 
     
@@ -65,6 +70,14 @@ public class HoKhauBean {
         this.listThanhVienCuaHo = listThanhVienCuaHo;
     }
 
+    public int getSoLanThamGiaHop() {
+        return soLanThamGiaHop;
+    }
+
+    public void setSoLanThamGiaHop(int soLanThamGiaHop) {
+        this.soLanThamGiaHop = soLanThamGiaHop;
+    }
+
     @Override
     public String toString() {
         String res = "<html> <style>p {padding: 5px; margin-left: 20px} table, th, td {border: 1px solid black; border-collapse: collapse;} table {width: 500px}</style> <div>"
@@ -73,7 +86,15 @@ public class HoKhauBean {
                 + "<p>Họ tên chủ hộ: <b>" + chuHo.getHoTen() + "</p>"
                 + "<p>Địa chỉ: <b>" + hoKhauModel.getDiaChi() + "</p>"
                 + "<p>Ngày lập: <b>" + hoKhauModel.getNgayLap().toString() + "</p>"
-                + "<h4>Danh sách thành viên<table>"
+                + "<p>Số lần tham gia họp: <b>" + soLanThamGiaHop;
+
+                if (soLanThamGiaHop >= 5) {
+                    res += " (Du tieu chuan gia dinh van hoa) </p>";
+                }else {
+                    res += " (Chua du tieu chuan gia dinh van hoa) </p>";
+                }
+
+                res += "<h4>Danh sách thành viên<table>"
                 + "<tr>"
                 + "<th>Họ tên</th>"
                 + "<th>Ngày sinh</th>"
