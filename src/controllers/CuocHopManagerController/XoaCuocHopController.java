@@ -33,11 +33,11 @@ import utility.TableModelCuocHop;
 
 public class XoaCuocHopController {
     private CuocHopBean cuocHopBean;
-    private final CuocHopService cuocHopService = new CuocHopService();
     private JTextField passwordJtf;
     private JTextField maCuocHopJtf;
     private JPanel tableJpn;
     private List<CuocHopBean> list;
+    private final CuocHopService cuocHopService = new CuocHopService();
     private final TableModelCuocHop tableModelCuocHop = new TableModelCuocHop();
     private final String COLUNMS[] = {"Mã cuộc họp", "Người tạo", "Nội dung chính", "Ngày họp"};
     
@@ -125,6 +125,40 @@ public class XoaCuocHopController {
         tableJpn.repaint();
     }
 
+    public CuocHopBean getCuocHopBean() {
+        return cuocHopBean;
+    }
 
+    public void setCuocHopBean(CuocHopBean cuocHopBean) {
+        this.cuocHopBean = cuocHopBean;
+    }
+
+    public CuocHopService getCuocHopService() {
+        return cuocHopService;
+    }
+
+    public JTextField getMaCuocHopJtf() {
+        return maCuocHopJtf;
+    }
+
+    public void setMaCuocHopJtf(JTextField searchJtf) {
+        this.maCuocHopJtf = searchJtf;
+    }
+
+    public JPanel getTableJpn() {
+        return tableJpn;
+    }
+
+    public void setTableJpn(JPanel tableJpn) {
+        this.tableJpn = tableJpn;
+    }
+
+    public List<CuocHopBean> getList() {
+        return list;
+    }
+
+    public void setList(List<CuocHopBean> list) {
+        this.list = list;
+    }
 
 }
