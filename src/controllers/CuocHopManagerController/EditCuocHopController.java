@@ -94,6 +94,7 @@ public class EditCuocHopController {
     }
 
     private void setData() {
+        // System.out.println(list);
         DefaultTableModel model = tableModelCuocHop.setTableCuocHop(list, COLUNMS);
 
         JTable table = new JTable(model) {
