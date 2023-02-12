@@ -286,11 +286,10 @@ public class HoKhauService {
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
             String query_count = "SELECT COUNT(idCuocHop) FROM "
-                        + "(SELECT DISTINCT idCuocHop, idHoKhau FROM tham_gia_cuoc_hop INNER JOIN thanh_vien_cua_ho ON thanh_vien_cua_ho.idNhanKhau = tham_gia_cuoc_hop.idNhanKhau) AS subquery"
-                        + "WHERE idHoKhau = "+ ID;
+                        + "(SELECT DISTINCT idCuocHop, idHoKhau FROM tham_gia_cuoc_hop INNER JOIN thanh_vien_cua_ho ON thanh_vien_cua_ho.idNhanKhau = tham_gia_cuoc_hop.idNhanKhau) AS subquery "
+                        + " WHERE idHoKhau = "+ ID;
             PreparedStatement preparedStatement_count = (PreparedStatement)connection.prepareStatement(query_count);
             ResultSet rs_count = preparedStatement_count.executeQuery();
-            System.out.println(rs_count);
             if (rs_count.next()) {
                 return rs_count.getInt("COUNT(idCuocHop)");
             }
