@@ -313,6 +313,7 @@ public class CuocHopService {
                     + "noiDung = " + noiDungChinh + ","
                     + "ngayHop = " + ngayHop
                     + "WHERE cuoc_hop.ID = " + idCuocHop;
+        // String query_1 = "UPDATE tham_gia_cuoc_hop"
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);

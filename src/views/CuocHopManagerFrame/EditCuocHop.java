@@ -343,7 +343,15 @@ public class EditCuocHop extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelBtnActionPerformed
 
     private void acceptBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptBtnActionPerformed
-        // TODO add your handling code here:
+        if (this.diaDiemJtf.getText().trim().isEmpty() || this.maCuocHopJtf.getText().trim().isEmpty()
+            || this.noiDungJtf.getText().trim().isEmpty() || this.ngayHopDateC == null) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập hết các trường bắt buộc!!", "Warning!", JOptionPane.NO_OPTION);
+        } else {
+            java.sql.Date ngayHopSQL= new java.sql.Date(ngayHopDateC.getDate().getTime());
+            this.controller.getCuocHopService().editCuocHop(this.cuocHopBean.getCuocHopModel().getID(),maCuocHopJtf.getText().trim(), noiDungJtf.getText().trim(), noiDungJtf.getText().trim(), ngayHopSQL);
+            this.parentJFrame.setEnabled(true);
+            dispose();
+        }
     }//GEN-LAST:event_acceptBtnActionPerformed
 
     private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
