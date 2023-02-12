@@ -48,46 +48,36 @@ public class CuocHopPanelController {
     }
 
     private void initAction() {
+        // String status = StringService.covertToString((String)this.StatusJcb.getSelectedItem());
         this.searchJtf.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                String key = searchJtf.getText().trim();
-                if (key.isEmpty()) {
-                    list = cuocHopService.getListCuocHop();
-                } else {
-                    list = cuocHopService.search(key);
-                }
+                // String key = searchJtf.getText().trim();
+                // list = cuocHopService.statisticCuocHop(status, key);
                 setData();
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                String key = searchJtf.getText().trim();
-                if (key.isEmpty()) {
-                    list = cuocHopService.getListCuocHop();
-                } else {
-                    list = cuocHopService.search(key);
-                }
+                // String key = searchJtf.getText().trim();
+                // list = cuocHopService.statisticCuocHop(status, key);
                 setData();
             }
 
             @Override
             public void changedUpdate(DocumentEvent e) {
-                String key = searchJtf.getText().trim();
-                if (key.isEmpty()) {
-                    list = cuocHopService.getListCuocHop();
-                } else {
-                    list = cuocHopService.search(key);
-                }
+                // String key = searchJtf.getText().trim();
+                // list = cuocHopService.statisticCuocHop(status, key);
                 setData();
             }
         });
     }
 
     public void setData() {
+        String key = searchJtf.getText().trim();
         String status = StringService.covertToString((String)this.StatusJcb.getSelectedItem());
-        System.out.println("Status is : " + status);
-        list = cuocHopService.statisticCuocHop(status);
+        list = cuocHopService.statisticCuocHop(status, key);
+        
         DefaultTableModel model = tableModelCuocHop.setTableCuocHop(list, COLUNMS);
 
         JTable table = new JTable(model) {
