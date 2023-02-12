@@ -5,7 +5,7 @@ import java.util.List;
 import models.HoKhauModel;
 import models.NhanKhauModel;
 import models.ThanhVienCuaHoModel;
-import services.HoKhauService;
+// import services.HoKhauService;
 
 /**
  *
@@ -19,14 +19,12 @@ public class HoKhauBean {
     private List<NhanKhauModel> listNhanKhauModels;
     private List<ThanhVienCuaHoModel> listThanhVienCuaHo;
     private int soLanThamGiaHop;
-    private final HoKhauService hoKhauService = new HoKhauService();
 
     public HoKhauBean(HoKhauModel hoKhauModel, NhanKhauModel chuHo, List<NhanKhauModel> listNhanKhauModels, List<ThanhVienCuaHoModel> listThanhVienCuaHo) {
         this.hoKhauModel = hoKhauModel;
         this.chuHo = chuHo;
         this.listNhanKhauModels = listNhanKhauModels;
         this.listThanhVienCuaHo = listThanhVienCuaHo;
-        this.soLanThamGiaHop = hoKhauService.getSoLanThamGiaHop(this.hoKhauModel.getID());
     }
     
     public HoKhauBean() {
@@ -34,7 +32,6 @@ public class HoKhauBean {
         this.chuHo = new NhanKhauModel();
         this.listNhanKhauModels = new ArrayList<>();
         this.listThanhVienCuaHo = new ArrayList<>();
-        this.soLanThamGiaHop = 0;
     }
 
     

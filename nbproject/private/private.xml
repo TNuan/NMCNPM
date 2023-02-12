@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/HoKhauManagerFrame/ThemMoiHoKhau.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/NhanKhauManagerController/KhaiTuController.java</file>
+            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/HoKhauManagerFrame/ChangeListPeopleJframe.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/NhanKhauManagerFrame/KhaiTuJFrame.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/ThongKePanelController.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/HoKhauManagerController/ThemMoiController.java</file>
@@ -16,6 +17,7 @@
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/CuocHopManagerFrame/EditCuocHop.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/HoKhauManagerFrame/ChuyenDiNoiKhac.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/NhanKhauManagerController/DangKyTamTruController.java</file>
+            <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/CuocHopManagerFrame/ChangeListMeetingAttendeeJframe.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/views/LoginUI.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/controllers/NhanKhauManagerController/TieuSuController.java</file>
             <file>file:/C:/Users/minib/Nuan/NMCNPM/src/services/HoKhauService.java</file>

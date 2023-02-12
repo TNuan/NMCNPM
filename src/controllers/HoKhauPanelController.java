@@ -99,6 +99,7 @@ public class HoKhauPanelController {
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() > 1) {
                     HoKhauBean temp = list.get(table.getSelectedRow());
+                    temp.setSoLanThamGiaHop(hoKhauService.getSoLanThamGiaHop(temp.getHoKhauModel().getID()));
                     InfoJframe infoJframe = new InfoJframe(temp.toString(), parentJFrame);
                     infoJframe.setLocationRelativeTo(null);
                     infoJframe.setVisible(true);

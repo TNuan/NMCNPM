@@ -150,7 +150,7 @@ public class CuocHopService {
     }
 
     // lay cuoc hop tu ngay den ngay
-    public List<CuocHopBean> statisticCuocHop(String status/*, String nguoiTaoCuocHop */) {
+    public List<CuocHopBean> statisticCuocHop(String status, String key) {
         List<CuocHopBean> list = new ArrayList<>();
 
         String query = "SELECT * FROM cuoc_hop INNER JOIN users ON cuoc_hop.idNguoiTaoCuocHop = users.ID ";
@@ -163,6 +163,17 @@ public class CuocHopService {
         } else if (status.equalsIgnoreCase("Da hop")) {
             query += " WHERE ngayHop < CURDATE() ";
         }
+
+        if (!key.isEmpty() && !status.equalsIgnoreCase("Toan bo")) {
+            query += " AND MATCH(maCuocHop) AGAINST ('"
+                    + key
+                    + "' IN NATURAL LANGUAGE MODE) ";
+        } else if (!key.isEmpty() && status.equalsIgnoreCase("Toan bo")) {
+            query += " WHERE MATCH(maCuocHop) AGAINST ('"
+                    + key
+                    + "' IN NATURAL LANGUAGE MODE) ";
+        }
+        
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
@@ -302,6 +313,7 @@ public class CuocHopService {
                     + "noiDung = " + noiDungChinh + ","
                     + "ngayHop = " + ngayHop
                     + "WHERE cuoc_hop.ID = " + idCuocHop;
+        // String query_1 = "UPDATE tham_gia_cuoc_hop"
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);

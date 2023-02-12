@@ -3,6 +3,7 @@ package controllers.CuocHopManagerController;
 import services.CuocHopService;
 import utility.TableModelCuocHop;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.EventObject;
 import java.util.List;
@@ -24,24 +25,31 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 import Bean.CuocHopBean;
+import Bean.MemOfMeeting;
+import models.ThamGiaCuocHopModel;
 
 public class EditCuocHopController {
     private CuocHopBean cuocHopBean;
     private JTextField searchJtf;
     private JPanel tableJpn;
+    private JPanel memTableJpn;
     private List<CuocHopBean> list;
+    private List<MemOfMeeting> listMemOfMeeting;
     private final CuocHopService cuocHopService = new CuocHopService();
     private final TableModelCuocHop tableModelCuocHop = new TableModelCuocHop();
+    private final TableModelCuocHop tableModelMemOfMeeting = new TableModelCuocHop();
     private final String COLUNMS[] = { "Mã cuộc họp", "Người tạo", "Nội dung chính", "Ngày họp" };
+    private final String COLUNMS_TGCH[] = { "Họ tên", "Ngày sinh", "Giới tính" };
     private JTextField maCuocHopJtf;
     private JTextField diaDiemJtf;
     private JTextField noiDungJtf;
     private JDateChooser ngayHopDateC;
 
-    public EditCuocHopController(CuocHopBean cuocHopBean, JTextField searchJtf, JPanel tableJpn) {
+    public EditCuocHopController(CuocHopBean cuocHopBean, JTextField searchJtf, JPanel tableJpn, JPanel memTableJpn) {
         this.cuocHopBean = cuocHopBean;
         this.searchJtf = searchJtf;
         this.tableJpn = tableJpn;
+        this.memTableJpn = memTableJpn;
         this.list = cuocHopService.getListCuocHop();
         setData();
         initAction();
@@ -55,7 +63,7 @@ public class EditCuocHopController {
         this.ngayHopDateC = ngayHopDateC;
     }
 
-    private void initAction() {
+    public void initAction() {
         this.searchJtf.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -93,10 +101,9 @@ public class EditCuocHopController {
         });
     }
 
-    private void setData() {
+    public void setData() {
         // System.out.println(list);
         DefaultTableModel model = tableModelCuocHop.setTableCuocHop(list, COLUNMS);
-
         JTable table = new JTable(model) {
             @Override
             public boolean editCellAt(int row, int column, EventObject e) {
@@ -123,6 +130,7 @@ public class EditCuocHopController {
                 diaDiemJtf.setText(cuocHopBean.getCuocHopModel().getDiaDiem());
                 noiDungJtf.setText(cuocHopBean.getCuocHopModel().getNoiDung());
                 ngayHopDateC.setDate(cuocHopBean.getCuocHopModel().getNgayHop());
+                setDateChoose();
             }
 
         });
@@ -131,9 +139,42 @@ public class EditCuocHopController {
         scroll.getViewport().add(table);
         tableJpn.removeAll();
         tableJpn.setLayout(new BorderLayout());
+        tableJpn.add(scroll);
         tableJpn.validate();
         tableJpn.repaint();
     }
+
+    public void setDateChoose() {
+        listMemOfMeeting = new ArrayList<>();
+        for (int i = 0; i < cuocHopBean.getListNhanKhauModels().size(); i++) {
+            MemOfMeeting temp = new MemOfMeeting();
+            temp.getNhanKhau().setNhanKhauModel(cuocHopBean.getListNhanKhauModels().get(i));
+            temp.setThamGiaCuocHopModel(cuocHopBean.getListThamGiaCuocHop().get(i));
+            listMemOfMeeting.add(temp);
+        }
+
+        DefaultTableModel model_mem = tableModelMemOfMeeting.setTableMember(listMemOfMeeting, COLUNMS_TGCH);
+        JTable table_mem = new JTable(model_mem){
+            @Override
+            public boolean editCellAt(int row, int column, EventObject e) {
+                return false;   //To change body of generated methods, choose Tools | Templates.
+            }
+        };
+        table_mem.getTableHeader().setFont(new Font("Arial", Font.BOLD, 14));
+        table_mem.getTableHeader().setPreferredSize(new Dimension(100, 30));
+        table_mem.setRowHeight(30);
+        table_mem.validate();
+        table_mem.repaint();
+        table_mem.setFont(new Font("Arial", Font.PLAIN, 14));
+        
+        JScrollPane scroll = new JScrollPane();
+        scroll.getViewport().add(table_mem);
+        memTableJpn.removeAll();
+        memTableJpn.setLayout(new BorderLayout());
+        memTableJpn.add(scroll);
+        memTableJpn.validate();
+        memTableJpn.repaint();
+    }    
 
     public CuocHopBean getCuocHopBean() {
         return cuocHopBean;
