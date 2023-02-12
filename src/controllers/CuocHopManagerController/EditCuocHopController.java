@@ -55,7 +55,7 @@ public class EditCuocHopController {
         this.ngayHopDateC = ngayHopDateC;
     }
 
-    private void initAction() {
+    public void initAction() {
         this.searchJtf.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -93,7 +93,7 @@ public class EditCuocHopController {
         });
     }
 
-    private void setData() {
+    public void setData() {
         // System.out.println(list);
         DefaultTableModel model = tableModelCuocHop.setTableCuocHop(list, COLUNMS);
 
@@ -131,6 +131,7 @@ public class EditCuocHopController {
         scroll.getViewport().add(table);
         tableJpn.removeAll();
         tableJpn.setLayout(new BorderLayout());
+        tableJpn.add(scroll);
         tableJpn.validate();
         tableJpn.repaint();
     }
