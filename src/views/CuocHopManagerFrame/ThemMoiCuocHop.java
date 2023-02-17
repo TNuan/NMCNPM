@@ -294,8 +294,8 @@ public class ThemMoiCuocHop extends javax.swing.JFrame {
         if (this.maCuocHopJtf.getText().trim().isEmpty()
             || this.ngayHopDateC == null    
             || this.diaDiemJtf.getText().trim().isEmpty()
-            // || this.noiDungJtf.getText().trim().isEmpty()
-            || this.list.isEmpty()) {
+            || this.noiDungJtf.getText().trim().isEmpty()
+        ) {
             JOptionPane.showMessageDialog(null, "Vui lòng nhập hết các thông tin bắt buộc", "Warning", JOptionPane.ERROR_MESSAGE);
         } else {
             this.list.forEach(person -> {
