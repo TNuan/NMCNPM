@@ -4,7 +4,8 @@
     - Phần 1: Quản lý nhân khẩu
     - Phần 2: Quản lý họp tổ dân phố
 
-# Yêu cầu: IDE, MySQL, JDK hoặc các môi trường chạy java khác  
+# Yêu cầu: 
+    - IDE, MySQL, JDK hoặc các môi trường chạy java khác  
 
 # Hướng dẫn:
     - Tải file sql về và import vào cơ sở dữ liệu thiết lập DB (có thể dùng workbench).
